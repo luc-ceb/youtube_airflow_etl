@@ -1,5 +1,5 @@
 ## Project 
-![project diagram ](images/diagrama_proyecto.png)
+![project diagram ](diagrama_proyecto.png)
 ## AWS deployment:
 1. Create a EC2 instance:
 	- Ubuntu 22.04 LTS.
@@ -17,8 +17,8 @@
 3. Make sure airflow is correctly installed running airflow , to initialize the airflow server run airflow standalone(copy airflow user and password).
 4. Copy public IPv4 DNS and add :8080 (airflow port).
 Configure security groups -> Inbound rules -> Add rule -> Type All traffic,  My Ip or Anywhere - IPv6
-![project diagram ](images/editar_regla_entradas.png)
-![project diagram ](images/grupos_de_seguridad.png)
+![project diagram ](editar_regla_entradas.png)
+![project diagram ](grupos_de_seguridad.png)
 5. Put a ETL into a python function.
 6. Create a youtube_dag_etl.py
 7. Create a s3 bucket:
@@ -32,6 +32,6 @@ Configure security groups -> Inbound rules -> Add rule -> Type All traffic,  My 
 9. Make sure that path on airflow.cfg is the same folder where are the dags, airflow/youtube_dags.
 10. IPv4 DNS and add :8080 (airflow port). Run dags.
 	- If we dont have permissions (log error:An error occurred (AccessDenied) when calling the CreateBucket operation: Access Denied)create new IAM role, with EC2FullAccess and S3FullAccess.
-![project diagram ](images/modificar_rol_iam.png)
+![project diagram ](modificar_rol_iam.png)
 11. Run the dag and should be success. 
-![project diagram ](images/bucket.png)
+![project diagram ](bucket.png)
